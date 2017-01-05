@@ -13,7 +13,10 @@ get_header();
     $series=get_terms('series');
     foreach($series as $s) { ?>
 	<div class="series">
-	    <?php echo "<h1>" . $s->name . "</h1>";
+	    <?php echo '<h1 class="title">' . $s->name . '</h1>';
+
+	    echo '<div class="description">' . $s->description . '</div>';
+
 	    $args=array(
 		'post_type' => 'sermon',
 		'taxonomy' => $s->taxonomy,
@@ -31,6 +34,7 @@ get_header();
 	    <?php }
 	    } ?>
 	</div>
+	<hr>
     <?php } ?>
 </div>
 
